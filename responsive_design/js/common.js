@@ -1,0 +1,21 @@
+$(document).ready(function(){
+
+var pixelratio = window.devicePixelRatio;
+ // alert('hi');
+ var x = $(window).width();
+ var y = $(window).height();
+
+   $("#c-width").html('<b>width: </b>' + x);
+   $("#c-height").html('<b>height: </b>' + y);
+   $("#c-ratio").html('<b>Pexel ratio: </b>' + pixelratio);
+
+ $(window).resize(function() {
+    x = $(window).width();
+    y = $(window).height();
+
+   $("#c-width").html('<b>width: </b>' + x);
+   $("#c-height").html('<b>height: </b>' + y);
+   $("#c-ratio").html('<b>Pexel ratio: </b>' + pixelratio);
+});
+ 
+});

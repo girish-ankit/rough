@@ -1,0 +1,88 @@
+* {margin:0px; padding:0px;}
+body{font: 1em/150% Arial, Helvetica, sans-serif;}
+#wrapper, #header, #content, #sidebar, #footer{border:1px solid #ccc; margin-bottom:5px}
+
+#wrapper{
+padding: 5px;
+width: 960px;
+margin: 20px auto;
+}
+
+#header{
+height: 100px;
+}
+#content{
+width: 600px;
+float: left;
+background: #f8f8f8;
+}
+#sidebar{
+width: 300px;
+float: right;
+background: #f0efef;
+}
+#footer{
+clear: both;
+}
+
+
+a {
+	color: #669;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+h1 {
+	font: bold 36px/100% Arial, Helvetica, sans-serif;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+	
+	#wrapper{
+		width: 94%;
+	}
+	#content {
+		width: 65%;
+	}
+	#sidebar {
+		width: 30%;
+	}
+
+}
+
+/* for 700px or less */
+@media screen and (max-width: 700px) {
+      #wrapper{
+		width: 94%;
+	}
+
+	#content {
+		width: auto;
+		float: none;
+	}
+	#sidebar {
+		width: auto;
+		float: none;
+	}
+
+}
+
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+	#header {
+		height: auto;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	#sidebar {
+		display: none;
+	}
+
+}
