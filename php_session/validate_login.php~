@@ -1,0 +1,41 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+session_start();
+
+
+// Grab User submitted information
+$email = $_POST["users_email"];
+$pass = $_POST["users_pass"];
+
+// Connect to the database
+$con = mysql_connect("localhost","root","htp@123");
+// Make sure we connected succesfully
+if(! $con)
+{
+    die('Connection Failed'.mysql_error());
+}
+
+// Select the database to use
+mysql_select_db("test_session",$con);
+
+$result = mysql_query("SELECT uid FROM users WHERE users_email = '".$email."' AND users_pass = '".$pass."'");
+
+$row = mysql_fetch_array($result);
+
+if($row["uid"]){
+
+ 
+  $_SESSION['uid'] = $row["uid"];
+    echo"You are a validated user.";
+}
+else{
+    echo"Sorry, your credentials are not valid, Please try again.";
+}
+
+if(isset($_SESSION['uid'])){
+echo '<h2>Welcome uid: </h2>'.$_SESSION['uid'];
+}else{
+echo '<h2>Session is not set</h2>';
+?>
